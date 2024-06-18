@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: stock-service
+  kafka:
+    topic:
+      name: order_topic
+    consumer:
+      bootstrap-servers: kafka:29092
+      group-id: group1
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    username: admin
+#    password: admin
+#    url: jdbc:postgresql://messages-db:5432/messages_db
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
