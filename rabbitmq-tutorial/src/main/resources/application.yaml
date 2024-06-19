@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: rabbitmq-tutorial
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: admin
+    password: admin
+
+rabbitmq:
+  queue:
+    name: queue_json
+  exchange:
+    name: queue_exchange_json
+  routing:
+    name: queue_routing_json
