@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: rabbitmq-tutorial
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: admin
+    password: admin
+    email:
+      queue:
+        name: order_email
