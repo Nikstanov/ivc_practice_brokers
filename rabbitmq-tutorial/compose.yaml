@@ -1,0 +1,19 @@
+services:
+  rabbitmq:
+    image: 'rabbitmq:3.13.3-management'
+    environment:
+      - 'RABBITMQ_DEFAULT_PASS=admin'
+      - 'RABBITMQ_DEFAULT_USER=admin'
+    volumes:
+      - ./rabbitmq:/var/lib/rabbitmq
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+
+  microservice:
+    build:
+      context: .
+    ports:
+      - '8080:8080'
+    depends_on:
+      - rabbitmq
