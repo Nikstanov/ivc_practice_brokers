@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: rabbitmq-tutorial
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: admin
+    password: admin
+
+
+rabbitmq:
+  email:
+    queue:
+      name: order_stock
+      routing: order_stock
+  stock:
+    queue:
+      name: order_email
+      routing: order_email
+  exchange:
+    name: order_exchange
